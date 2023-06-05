@@ -1,1 +1,26 @@
-<paste log output from Kubernetes-mediated prediction, here>
+(.newdevops) Huynhs-MacBook-Pro:MLMicroserviceAPI huynhtuananh$ ./run_kubernetes.sh 
+pod/machinelearningapi created
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   4d12h
+
+NAME                     READY   STATUS              RESTARTS   AGE
+pod/machinelearningapi   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+(.newdevops) Huynhs-MacBook-Pro:MLMicroserviceAPI huynhtuananh$ kubectl get deploy,rs,svc,pods
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   4d12h
+
+NAME                     READY   STATUS    RESTARTS   AGE
+pod/machinelearningapi   1/1     Running   0          4m17s
+(.newdevops) Huynhs-MacBook-Pro:MLMicroserviceAPI huynhtuananh$ 
+(.newdevops) Huynhs-MacBook-Pro:MLMicroserviceAPI huynhtuananh$ ./run_kubernetes.sh 
+Error from server (AlreadyExists): pods "machinelearningapi" already exists
+NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+service/kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   4d12h
+
+NAME                     READY   STATUS    RESTARTS   AGE
+pod/machinelearningapi   1/1     Running   0          5m11s
+Forwarding from 0.0.0.0:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+Handling connection for 8000
